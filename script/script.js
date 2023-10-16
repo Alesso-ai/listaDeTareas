@@ -1,16 +1,20 @@
 document.addEventListener("DOMContentLoaded", function(){
 
-    const taskBtn = document.getElementById("taskBtn");
-    const deleteTaskBtn = document.getElementById("clearTaskBtn");
-    const taskInput = document.getElementById("taskInput");
-    const taskList = document.getElementById("taskList");
+
+    
+    // Agrega un evento al botón en JavaScript
+    const taskBtn = document.getElementById("taskBtn"); // Reemplaza "taskBtn" con el ID de tu botón.
+    taskBtn.addEventListener("click",addTask);
+
+    // Agrega un evento al botón "Limpiar Tareas" en JavaScript
+    const clearTasks = document.getElementById("clearTasks");// Reemplaza "clearTasks" con el ID de tu botón.
+    clearTasks.addEventListener("click",clearAllTasks);
 
 
-    taskBtn.addEventListener("click", addTask);
-    deleteTaskBtn.addEventListener("click", clearTasks);
 
     /*Keyup para que reconozca tecla del teclado y le metes event
     para al presionar enter añada  */
+    // Agrega un evento para detectar la tecla "Enter" en el campo de entrada
 
     taskInput.addEventListener("Keyup", function (event){
 
@@ -41,14 +45,21 @@ document.addEventListener("DOMContentLoaded", function(){
         /*Crear elementos li con una constante y createElement*/
 
         const li = document.createElement("li");
+
+
+
         const checkbox = document.createElement("input");
-        const taskLabel = document.createElement("label");
 
         /*Crear atributos para esa etiqueta de li cuando las cree*/
-
         checkbox.type = "checkbox";
         checkbox.className = "checkbox";
+
+        const taskLabel = document.createElement("label");
         taskLabel.textContent=taskText;
+        
+
+        
+        
 
         /*Esto es para que se realice un cambio */
 
@@ -73,22 +84,20 @@ document.addEventListener("DOMContentLoaded", function(){
 
     }
 
-    function clearTasks() {
+    function clearAllTasks() {
+        // Obtén todas las tareas
         const tasks = document.querySelectorAll("li");
-
-        for( let i=0; i<task.length; i++ ){
-
-            taskList.removeChild(task[i]);
+    
+        // Recorre todas las tareas y elimínalas
+        for (let i = 0; i < tasks.length; i++) {
+            taskList.removeChild(tasks[i]);
         }
 
 
+
+
+
+
+
     }
-
-
-
-
-
-
-
-
 });
