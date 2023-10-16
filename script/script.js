@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(){
         /* Operador ternario añado evento de teclado igual a enter
         meto el ? addtask() para añadir lista y le meto el null  
         para cualquier otra tecla no haga nada */
-        (event.key=="Enter") ? addTask() : null;
+        (event.key === "Enter") ? addTask() : null;
 
 
     });
