@@ -25,20 +25,31 @@ document.addEventListener("DOMContentLoaded", function(){
 
     function addTask() {
 
+        /*Crear la constante con la de input y pasarlo a valor y trim
+        para los espacios  */
+        
+        const taskText = taskInput.value.trim();
+
         /*Crear elementos li con una constante y createElement*/
 
         const li = document.createElement("li");
         const checkbox = document.createElement("input");
+        const taskLabel = document.createElement("label");
 
-        /*Crear atributos para esa etiqueta*/
+        /*Crear atributos para esa etiqueta de li cuando las cree*/
 
         checkbox.type = "checkbox";
         checkbox.className = "checkbox";
+        taskLabel.textContent=
+
+        
 
 
     }
 
     function deleteTaskBtn() {
+
+
 
     }
 
