@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", function(){
 
     const taskBtn = document.getElementById("taskBtn");
-    const deleteTaskBtn = document.getElementById("deleteTaskBtn");
+    const deleteTaskBtn = document.getElementById("clearTaskBtn");
     const taskInput = document.getElementById("taskInput");
+    const taskList = document.getElementById("taskList");
 
 
     taskBtn.addEventListener("click", addTask);
-    deleteTaskBtn.addEventListener("click", deleteTaskBtn);
+    deleteTaskBtn.addEventListener("click", clearTasks);
 
     /*Keyup para que reconozca tecla del teclado y le metes event
     para al presionar enter añada  */
@@ -30,6 +31,13 @@ document.addEventListener("DOMContentLoaded", function(){
         
         const taskText = taskInput.value.trim();
 
+        /*Si esta vacio muestrame un alert*/
+        
+        if (taskText === "") {
+          alert("Introduzca una tarea");
+          return;
+        }
+
         /*Crear elementos li con una constante y createElement*/
 
         const li = document.createElement("li");
@@ -40,15 +48,38 @@ document.addEventListener("DOMContentLoaded", function(){
 
         checkbox.type = "checkbox";
         checkbox.className = "checkbox";
-        taskLabel.textContent=
+        taskLabel.textContent=taskText;
+
+        /*Esto es para que se realice un cambio */
+
+        checkbox.addEventListener("change", function(){
+            /* Que aparezca la palomilla,
+             usas el toggle y checkbox.checked*/
+            taskLabel.classList.toggle("completed",checkbox.checked);
+
+        });
+        
+        li.appendChild(checkbox);
+        li.appendChild(taskLabel);
+
+        taskList.appendChild(li);
+
+        /* Para resetear*/ 
+        taskInput.vallue = "";
+        /*Cuando des enter el cursor salga*/
+        taskInput.focus();
 
         
 
-
     }
 
-    function deleteTaskBtn() {
+    function clearTasks() {
+        const tasks = document.querySelectorAll("li");
 
+        for( let i=0; i<task.length; i++ ){
+
+            taskList.removeChild(task[i]);
+        }
 
 
     }
