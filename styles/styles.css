@@ -1,3 +1,13 @@
+@font-face {
+    font-family:'TiltNeon';
+    src:url('assets/fonts/TiltNeon-Regular-VariableFont_XROT,YROT.ttf') format('ttf');
+}
+
+
+
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -5,12 +15,11 @@
 
 body{
     background-color: #f0f0f0;
-    font-family: 'Tilt Neon', sans-serif;
     text-align: center;
     margin-top: 40px;
     justify-content: center;
+    font-family: 'Tilt Neon', sans-serif;
     
-
 }
 
 .container{
